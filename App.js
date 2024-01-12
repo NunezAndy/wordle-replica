@@ -10,10 +10,10 @@ function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
 
-  const onSelectLetter = (keyVal) => {
+  const onSelectLetter = (key) => {
     if (currAttempt.letterPos > 4) return;
     const newBoard = [...board];
-    newBoard[currAttempt.attempt][currAttempt.letterPos] = keyVal;
+    newBoard[currAttempt.attempt][currAttempt.letterPos] = key;
     setBoard(newBoard);
     setCurrAttempt({ ...currAttempt, letterPos: currAttempt.letterPos + 1 });
   };
